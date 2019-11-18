@@ -1,9 +1,23 @@
 {
   "name": "slow-typer",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "description": "A typewritter effect class",
   "main": "slow-typer.js",
   "repository": "https://github.com/TimBeard/slow-typer.git",
   "author": "Tim Beard <timothy.beard@gpulse.fr>",
-  "license": "MIT"
+  "license": "MIT",
+  "keywords": [
+    "javascript",
+    "js",
+    "browser",
+    "class",
+    "es6",
+    "moderne",
+    "babel",
+    "webpack",
+    "import",
+    "typewriter",
+    "effect",
+    "typewriter effect"
+  ]
 }

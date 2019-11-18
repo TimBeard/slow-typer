@@ -20,16 +20,17 @@ export default class {
 
   constructor (target, options) {
 
+    this.settings = Object.assign({}, params, options)
     this.isIdle = true
     this.buffer = []
-    this.target = getElement(target)
-    this.settings = Object.assign({}, params, options)
+    this.output = ''
+    this.target = target
   }
 
   set target (elm) {
 
     if (this.isIdle) {
-      this.target = getElement(elm)
+      this.settings.target = getElement(elm)
     }
   }
 
@@ -66,7 +67,8 @@ export default class {
 
     setTimeout(() => {
 
-      this.target.innerText += this.buffer.shift()
+      this.output += this.buffer.shift()
+      this.settings.target.innerText = this.output
 
       if (this.buffer.length) {
         this.typeChar()
@@ -84,8 +86,9 @@ export default class {
 
       this.isIdle = false
       this.buffer = input.split('')
+      this.output = ''
 
-      this.target.innerText = ''
+      this.settings.target.innerText = this.output
 
       if (this.buffer.length) {
         this.typeChar()
@@ -104,6 +107,6 @@ export default class {
   }
 
   clear () {
-    this.target.innerText = ''
+    this.settings.target.innerText = ''
   }
 }

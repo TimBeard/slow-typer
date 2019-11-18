@@ -40,3 +40,6 @@ const typewriter = new SlowTyper('#target', { delay: 50, jitter: 0 })
 | write(text)           | Outputs `text` to current target                            |
 | writeTo(target, text) | Changes current target to `target` and outputs `text` to it |
 | clear()               | Clears target text                                          |
+
+# Demo
+You can try a demo on [Codepen](https://codepen.io/TimBeard/pen/NWWeamO) (Might not be up to date)
