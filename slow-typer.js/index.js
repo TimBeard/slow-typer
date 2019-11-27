@@ -9,11 +9,16 @@ const randInRange = (min, max) => f(r() * (max - min + 1)) + min
 
 const getElement = (elm) => {
 
-  if (elm instanceof HTMLElement) {
-    return elm
+  if (elm) {
+
+    if (elm instanceof HTMLElement) {
+      return elm
+    }
+
+    return document.querySelector(elm)
   }
 
-  return document.querySelector(elm)
+  return false
 }
 
 export default class {
@@ -68,7 +73,10 @@ export default class {
     setTimeout(() => {
 
       this.output += this.buffer.shift()
-      this.settings.target.innerText = this.output
+
+      if (this.target) {
+        this.settings.target.innerText = this.output
+      }
 
       if (this.buffer.length) {
         this.typeChar()
@@ -88,7 +96,9 @@ export default class {
       this.buffer = input.split('')
       this.output = ''
 
-      this.settings.target.innerText = this.output
+      if (this.target) {
+        this.settings.target.innerText = this.output
+      }
 
       if (this.buffer.length) {
         this.typeChar()
@@ -107,6 +117,11 @@ export default class {
   }
 
   clear () {
-    this.settings.target.innerText = ''
+
+    this.output = ''
+
+    if (this.target) {
+      this.settings.target.innerText = this.output
+    }
   }
 }
