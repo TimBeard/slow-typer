@@ -88,7 +88,7 @@ export default class {
 
   write (text) {
 
-    if (this.isIdle) {
+    if (text && this.isIdle) {
 
       const input = text.trim()
 

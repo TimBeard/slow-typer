@@ -1,6 +1,6 @@
 {
   "name": "slow-typer",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A typewritter effect class",
   "main": "slow-typer.js",
   "repository": "https://github.com/TimBeard/slow-typer.git",
